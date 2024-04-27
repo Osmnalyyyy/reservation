@@ -22,7 +22,6 @@ public class Bus {
     @Column(name = "id", nullable = false)
     private Long id;
 
-
     @Column(name = "brand", nullable = false)
     private String brand;
 
@@ -50,7 +49,11 @@ public class Bus {
     @Column(name = "price", nullable = false)
     private double price;
 
+    @OneToMany(mappedBy = "bus")
+    private List<Seat> seats ;
 
     @OneToMany(mappedBy = "bus")
-    private List<Seat> seats = new ArrayList<>();
+    private List<Ticket> tickets ;
+
+
 }
